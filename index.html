@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="assets/game/UnityLoader.js"></script>
+</head>
+<body>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      cursor: none !important;
+    }
+    body {
+      background-color: #232144;
+    }
+    #gameContainer {
+      margin: 0 auto;
+      background: #232144 !important ;
+
+    }
+    canvas {
+      width: 98vw;
+      height: 46vw;
+      margin: 10px auto;
+      margin-left: 1vw;
+    }
+  </style>
+  <article id="gameContainer" style="width: 100%"/>
+  <div id="loading-text--num"> </div>
+  <script>
+    window.UnityFinished = () => console.log("UnityFinished");
+    window.onload = (event) => {
+      window.gameInstance = UnityLoader.instantiate("gameContainer", [
+        'assets/game/pong2018ver7.json'
+      ]);
+   };
+  </script>
+
+</body>
+</html>
